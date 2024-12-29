@@ -29,15 +29,25 @@ Task Tracker CLI é uma aplicação em Python que permite gerenciar tarefas dire
 
 - Python 3.8 ou superior instalado em sua máquina.
 
-### Instalação
+### Como instalar apenas este projeto
+Para clonar apenas o diretório deste projeto, você pode usar o comando **sparse checkout** do Git:
 
-1. Clone este repositório:
-    ```bash
-    git clone https://github.com/SouzaSantosK/Python_Roadmap/Task_Tracker_Cli.git
-    cd task-manager-cli
-    ```
+1. Clone o repositório principal sem o conteúdo completo:
+   ```bash
+   git clone --no-checkout https://github.com/SouzaSantosK/Python_Projects.git
+   cd Python_Projects
+   ```
+2. Ative o sparse checkout:
+   ```bash
+   git sparse-checkout init --cone
+   git sparse-checkout set Task_Tracker_Cli
+   ```
+3. Faça o checkout:
+   ```bash
+   git checkout
+   ```
+5. Por fim, certifique-se de que os arquivos do projeto, incluindo o `tasks.json` foram instalados no diretório. Caso `tasks.json` não exista, o programa criará automaticamente.
 
-2. Certifique-se de que o arquivo `tasks.json` está no diretório do projeto. Caso ele não exista, o programa criará automaticamente.
 
 ### Comandos Disponíveis
 
