@@ -1,6 +1,9 @@
-# Task Tracker CLI
+# [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
 
 Task Tracker CLI é uma aplicação em Python que permite gerenciar tarefas diretamente pelo terminal. Com ele, você pode adicionar, listar, atualizar, remover e alterar o status das suas tarefas de forma simples e eficiente.
+
+Para mais detalhes visite as [informações do projeto](https://roadmap.sh/projects/task-tracker): 
+
 
 ## Funcionalidades
 
