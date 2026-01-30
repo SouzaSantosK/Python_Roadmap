@@ -1,0 +1,14 @@
+<div style="display: flex; justify-content: space-between; border-bottom: 1px solid #ccc; padding: 10px;">
+    <div style="display: flex; gap: 10px; align-items: center; flex-direction: row;">
+        <span style="font-weight: bold; font-size: 20px;">{title}</span>
+        -
+        <span style="color: #636e72;">{date}</span>
+    </div>
+    <div>
+        <a href="/admin/edit/{id}">Editar</a> | 
+        <form action="/admin/delete" method="POST" style="display:inline;">
+            <input type="hidden" name="id" value="{id}">
+            <button type="submit" onclick="return confirm('Apagar?')">Deletar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+:root {
+    --primary: #2d3436;
+    --accent: #0984e3;
+    --bg: #fdfdfd;
+    --text: #2d3436;
+    --border: #dfe6e9;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.8;
+    color: var(--text);
+    background-color: var(--bg);
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    font-weight: 500;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.article-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.2s;
+}
+
+.article-item a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    display: block;
+}
+
+.article-item span {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #000;
+}
+
+.admin-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
