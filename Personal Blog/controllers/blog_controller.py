@@ -21,7 +21,7 @@ class BlogController:
 
     # --- Auth validation ---
     def is_authenticated(self):
-        """Verifica manualmente se o header Cookie contém nossa sessão"""
+        """Verifica manualmente se o header Cookie contém uma sessão"""
         cookie_header = self.handler.headers.get("Cookie")
         if cookie_header and "session_id=admin_logado" in cookie_header:
             return True
@@ -130,7 +130,9 @@ class BlogController:
         username = fields.get("username", [""])[0]
         password = fields.get("password", [""])[0]
 
-        if username == "admin" and password == "admin":
+        if username == os.getenv("ADMUSERNAME") and password == os.getenv(
+            "ADMPASSWORD"
+        ):  # substituir por outro valor se não usar o .env
             self.handler.send_response(303)
             self.handler.send_header(
                 "Set-Cookie", "session_id=admin_logado; Path=/; HttpOnly"

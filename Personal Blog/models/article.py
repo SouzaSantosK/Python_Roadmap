@@ -27,7 +27,7 @@ class ArticleModel:
         conn = self._get_connection()
         cur = conn.cursor()
 
-        query = "SELECT article_id, article_title, article_content, article_date FROM articles ORDER BY article_date DESC"
+        query = "SELECT article_id, article_title, article_content, TO_CHAR(article_date, 'DD/MM/YYYY') FROM articles ORDER BY article_date DESC"
 
         cur.execute(query)
         rows = cur.fetchall()
@@ -42,7 +42,7 @@ class ArticleModel:
         conn = self._get_connection()
         cur = conn.cursor()
 
-        query = "SELECT article_id, article_title, article_content, article_date FROM articles WHERE article_id = %s"
+        query = "SELECT article_id, article_title, article_content, TO_CHAR(article_date, 'DD/MM/YYYY') FROM articles WHERE article_id = %s"
 
         cur.execute(query, (article_id,))
         row = cur.fetchone()
