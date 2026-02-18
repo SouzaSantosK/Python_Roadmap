@@ -72,7 +72,7 @@ Este projeto aborda diretamente os seguintes conceitos de Python e desenvolvimen
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/github-user-activity.git
+git clone https://github.com/SouzaSantosK/Python_Roadmap.git
 cd github-user-activity
 ```
 
