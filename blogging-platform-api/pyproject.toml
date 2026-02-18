@@ -1,0 +1,28 @@
+[project]
+name = "blogging-platform-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "SouzaSantosK",email = "kaua.souza.santosc@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.129.0,<0.130.0)",
+    "uvicorn (>=0.41.0,<0.42.0)",
+    "sqlalchemy (>=2.0.46,<3.0.0)",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "python-multipart (>=0.0.22,<0.0.23)",
+    "sqlalchemy-utils (>=0.42.1,<0.43.0)",
+    "alembic (>=1.18.4,<2.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "pytest (>=9.0.2,<10.0.0)",
+    "pytest-asyncio (>=1.3.0,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "blogging_platform_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
