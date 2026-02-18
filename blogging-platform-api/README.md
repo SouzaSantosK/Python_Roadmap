@@ -32,7 +32,7 @@ Uma API RESTful robusta e assíncrona para gerenciamento de uma plataforma de bl
 ### 1. Clonar o repositório
 
 ```bash
-git clone [https://github.com/SEU_USUARIO/blogging-platform-api.git](https://github.com/SEU_USUARIO/blogging-platform-api.git)
+git clone https://github.com/SouzaSantosK/Python_Roadmap.git
 cd blogging-platform-api
 ```
 
@@ -47,7 +47,12 @@ poetry install
 Inicie o ambiente virtual criado pelo Poetry:
 
 ```bash
-poetry venv activate
+poetry env activate
+```
+
+Verifique pelo terminal se você está dentro do ambiente virtual, caso contrário, rode o seguinte comando no CMD:
+```cmd
+.\.venv\Scripts\activate
 ```
 
 ### 3. Configurar o Banco de Dados
