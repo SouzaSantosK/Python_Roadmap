@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Length{% endblock %}
+{% block convtype %}length{% endblock %}
+{% block convertFromOpts %}
+    <option value="">Choose an option</option>
+    <option value="mm">Millimiter</option>
+    <option value="cm">Centimeter</option>
+    <option value="m">Meter</option>
+    <option value="km">Kilometer</option>
+    <option value="in">Inch</option>
+    <option value="ft">Foot</option>
+    <option value="yd">Yard</option>
+    <option value="mi">Mile</option>
+{% endblock %}
+{% block convertToOpts %}
+    <option value="">Choose an option</option>
+    <option value="mm">Millimiter</option>
+    <option value="cm">Centimeter</option>
+    <option value="m">Meter</option>
+    <option value="km">Kilometer</option>
+    <option value="in">Inch</option>
+    <option value="ft">Foot</option>
+    <option value="yd">Yard</option>
+    <option value="mi">Mile</option>
+{% endblock %}
+{% block form %}
+    {% if data %}
+        {% if data.error %}
+            <p style="color: red; font-weight: 500;">{{ data.error }}</p>
+            <a href="/length">
+                <button>Try again</button>
+            </a>
+        {% else %}
+            <p for="unit-value">Result of your calculation</p>
+            <h2>
+                {{ data.original_val }} {{ data.unit_from }} = {{ data.result }} {{
+                data.unit_to }}
+            </h2>
+            <a href="/length" class="reset" type="submit">Reset</a>
+        {% endif %}
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}

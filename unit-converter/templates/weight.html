@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Weigth{% endblock %}
+{% block convtype %}weight{% endblock %}
+{% block convertFromOpts %}
+    <option value="">Choose an option</option>
+    <option value="mg">Milligram</option>
+    <option value="g">Gram</option>
+    <option value="kg">Kilogram</option>
+    <option value="oz">Ounce</option>
+    <option value="lb">Pound</option>
+{% endblock %}
+{% block convertToOpts %}
+    <option value="">Choose an option</option>
+    <option value="mg">Milligram</option>
+    <option value="g">Gram</option>
+    <option value="kg">Kilogram</option>
+    <option value="oz">Ounce</option>
+    <option value="lb">Pound</option>
+{% endblock %}
+{% block form %}
+    {% if data %}
+        {% if data.error %}
+            <p style="color: red; font-weight: 500;">{{ data.error }}</p>
+            <a href="/weight">
+                <button>Try again</button>
+            </a>
+        {% else %}
+            <p for="unit-value">Result of your calculation</p>
+            <h2>
+                {{ data.original_val }} {{ data.unit_from.upper }} = {{ data.result }} {{
+                data.unit_to }}
+            </h2>
+            <a href="/weight" class="reset" type="submit">Reset</a>
+        {% endif %}
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}

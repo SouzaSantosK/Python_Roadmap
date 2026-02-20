@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Unit Converter -
+            {% block title %}?{% endblock %}
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    </head>
+    <body>
+        <section>
+            <h1>Unit Converter</h1>
+            <nav>
+                <a class="{{ 'active' if request.endpoint == 'length_converter' }}"
+                   href="{{ url_for('length_converter') }}">Length</a>
+                <a class="{{ 'active' if request.endpoint == 'weight_converter' }}"
+                   href="{{ url_for('weight_converter') }}">Weight</a>
+                <a class="{{ 'active' if request.endpoint == 'temperature_converter' }}"
+                   href="{{ url_for('temperature_converter') }}">Temperature</a>
+            </nav>
+            {% block form %}
+                <form method="post">
+                    <label for="unit-value">
+                        Enter the
+                        {% block convtype %}{% endblock %}
+                        to convert
+                    </label>
+                    <input type="number" name="unit-value" id="unit-value" required />
+                    <label for="convert-from">Unit to Convert from</label>
+                    <select name="convert-from" id="convert-from">
+                        {% block convertFromOpts %}{% endblock %}
+                    </select>
+                    <label for="convert-to">Unit to Covert to</label>
+                    <select name="convert-to" id="convert-to">
+                        {% block convertToOpts %}{% endblock %}
+                    </select>
+                    <button type="submit">Convert</button>
+                </form>
+            {% endblock %}
+        </section>
+    </body>
+</html>

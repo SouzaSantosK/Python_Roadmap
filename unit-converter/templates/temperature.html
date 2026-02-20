@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}TTemperature{% endblock %}
+{% block convtype %}temperature{% endblock %}
+{% block convertFromOpts %}
+    <option value="">Choose an option</option>
+    <option value="c">Celsius</option>
+    <option value="f">Fahrenheit</option>
+    <option value="k">Kelvin</option>
+{% endblock %}
+{% block convertToOpts %}
+    <option value="">Choose an option</option>
+    <option value="c">Celsius</option>
+    <option value="f">Fahrenheit</option>
+    <option value="k">Kelvin</option>
+{% endblock %}
+{% block form %}
+    {% if data %}
+        {% if data.error %}
+            <p style="color: red; font-weight: 500;">{{ data.error }}</p>
+            <a href="/temperature">
+                <button>Try again</button>
+            </a>
+        {% else %}
+            <p for="unit-value">Result of your calculation</p>
+            <h2>
+                {{ data.original_val }} {{ data.unit_from.upper() }} = {{ data.result }} {{
+                data.unit_to.upper() }}
+            </h2>
+            <a href="/temperature" class="reset" type="submit">Reset</a>
+        {% endif %}
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
