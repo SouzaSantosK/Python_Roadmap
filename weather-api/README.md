@@ -43,11 +43,13 @@ A aplicação utiliza o padrão Cache-Aside:
 
 - Python e Poetry instalados.
 - Docker instalado em sua máquina.
+- Chave de API da VisualCrossing - Pegue a sua aqui: https://www.visualcrossing.com/sign-up/
 
 ### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/SouzaSantosK/Python_Roadmap.git
+cd Python_Roadmap
 cd weather-api-dashboard
 ```
 
@@ -73,19 +75,20 @@ db_port=6379
 
 1. Instalar dependências com Poetry:
 
+Com o terminal aberto na raiz do projeto
+1. Crie um ambiente virtual poetry.
+2. Ative o ambiente.
+3. Instale as dependências.
 ```bash
+poetry env activate
+.\.venv\Scripts\activate
 poetry install
 ```
 
-2. Ativar o ambiente virutal e iniciar a aplicação:
+2. Inicie a aplicação:
 
+Use o comando:
 ```bash
-# No Windows:
-.\.venv\Scripts\activate
-
-# No Linux/Mac:
-source .venv/bin/activate
-
 python app.py
 ```
 
