@@ -6,3 +6,4 @@
 4. Number Guessing Game: https://roadmap.sh/projects/number-guessing-game
 5. Blogging Platform API: https://roadmap.sh/projects/blogging-platform-api
 6. Unit Converter: https://roadmap.sh/projects/unit-converter
+7. Weather API: https://roadmap.sh/projects/weather-api-wrapper-service

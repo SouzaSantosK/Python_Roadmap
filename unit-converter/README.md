@@ -32,7 +32,7 @@ Siga os passos abaixo para configurar o ambiente e rodar o conversor localmente:
 
 ### 1. Clonar o repositório
 ```bash
-https://github.com/SouzaSantosK/Python_Roadmap.git
+git clone https://github.com/SouzaSantosK/Python_Roadmap.git
 cd unit-converter
 ```
 ### 2. Criar um ambiente virtual Python

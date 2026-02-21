@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Welcome to Weather API</h1>
+        <div class="search-container">
+          <form action="/" method="GET">
+            <input
+              type="text"
+              name="city"
+              placeholder="Enter the city name here."
+              required
+            />
+          </form>
+        </div>
+      </header>
+
+      {% if weather %}
+      <h2 class="city-title">{{ weather.city }}</h2>
+      <div class="weather-section">
+        <h3 class="section-title">Current Conditions</h3>
+        <div class="current-grid">
+          <div class="card main-weather">
+            <div class="main-weather-left">
+              <h3>Now</h3>
+              <div class="main-temp-wrapper">
+                <span class="main-temp">{{ weather.current.temp }}&deg;</span>
+                <img
+                  class="main-icon"
+                  src="{{ weather.current.icon }}"
+                  alt="Weather Icon"
+                />
+              </div>
+              <div class="high-low">
+                <p>High: {{ weather.current.high }}&deg;</p>
+                <p>Low: {{ weather.current.low }}&deg;</p>
+              </div>
+            </div>
+            <div class="main-weather-right">
+              <div class="condition">{{ weather.current.condition }}</div>
+              <div class="feels-like">
+                Feels like {{ weather.current.feelslike }}&deg;
+              </div>
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <h4>Wind</h4>
+            <div class="metric-value">
+              {{ weather.current.windspeed }}<span>km/h</span>
+            </div>
+            <div class="metric-desc">
+              <p>{{ weather.current.winddesc }}</p>
+              <p>&bull; From {{ weather.current.winddirection }}</p>
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <h4>Humidity</h4>
+            <div class="metric-value">
+              {{ weather.current.humidity }} <span>%</span>
+            </div>
+            <div class="metric-desc">
+              Dew point {{ weather.current.dew }}&deg;
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <h4>UV Index</h4>
+            <div class="metric-value">{{ weather.current.uvvalue }}</div>
+            <div class="metric-desc">{{ weather.current.uvindex }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-section">
+        <h3 class="section-title">5-Day Forecast</h3>
+
+        <div class="forecast-grid">
+          {% for day in weather.forecast %}
+          <div class="forecast-card">
+            <div class="forecast-date">{{ day.datetime }}</div>
+            <div class="night-label">Day</div>
+            <div class="forecast-temp day-temp">
+              <p class="day-p">{{ day.temp_day }}°</p>
+              <img
+                class="weather-icon"
+                src="{{ day.icon_day }}"
+                alt="Weather Icon"
+              />
+            </div>
+            <div class="break-line"></div>
+            <div class="night-label">Night</div>
+            <div class="forecast-temp night-temp">
+              <p class="night-p">{{ day.temp_night }}°</p>
+              <img
+                class="weather-icon"
+                src="{{ day.icon_night }}"
+                alt="Weather icon"
+              />
+            </div>
+
+            <div class="forecast-details">
+              <div class="detail-item">
+                <span class="label">Wind:</span
+                ><span class="value">{{ day.windspeed }}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Humidity:</span
+                ><span class="value">{{ day.humidity }}%</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">UV Index:</span
+                ><span class="value">{{ day.uvindex }}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Precip:</span
+                ><span class="value">{{ day.precip }}%</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>
